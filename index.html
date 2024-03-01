@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TdTube</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="container mx-auto">
+    <header>
+        <!-- navBar -->
+        <div class="navbar bg-base-100">
+            <div class="navbar-start">
+                <!-- <div class="dropdown">
+                    <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h7" />
+                        </svg>
+                    </div>
+                    <ul tabindex="0"
+                        class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                        <li><a>Homepage</a></li>
+                        <li><a>Portfolio</a></li>
+                        <li><a>About</a></li>
+                    </ul>
+                </div> -->
+                <img src="./images/Logo.png" alt="">
+            </div>
+            <div class="navbar-center">
+                <a id="sort-by-view-button" class="btn btn-ghost text-xl bg-[#25252533]">Sort by view</a>
+            </div>
+            <div class="navbar-end">
+                <!-- <button class="btn btn-ghost btn-circle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                </button>
+                <button class="btn btn-ghost btn-circle">
+                    <div class="indicator">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                        </svg>
+                        <span class="badge badge-xs badge-primary indicator-item"></span>
+                    </div>
+                </button> -->
+                <button class="btn btn-error bg-red-600 px-6 text-fuchsia-100 font-semibold text-base">Blog</button>
+            </div>
+        </div>
+
+        <div class="mt-5">
+            <hr>
+        </div>
+
+        <!-- Category -->
+        <div class="navbar bg-base-100">
+            <!-- <div class="navbar-start">
+                <div class="dropdown">
+                    <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h7" />
+                        </svg>
+                    </div>
+                    <ul tabindex="0"
+                        class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                        <li><a>Homepage</a></li>
+                        <li><a>Portfolio</a></li>
+                        <li><a>About</a></li>
+                    </ul>
+                </div>
+            </div> -->
+            <div id="category-container" class="navbar-center w-full flex justify-center">
+                <!-- <a class="btn btn-ghost text-xl">All</a>
+                <a class="btn btn-ghost text-xl">Music</a>
+                <a class="btn btn-ghost text-xl">Comedy</a>
+                <a class="btn btn-ghost text-xl">Drawing</a> -->
+            </div>
+            <!-- <div class="navbar-end">
+                <button class="btn btn-ghost btn-circle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                </button>
+                <button class="btn btn-ghost btn-circle">
+                    <div class="indicator">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                        </svg>
+                        <span class="badge badge-xs badge-primary indicator-item"></span>
+                    </div>
+                </button>
+            </div> -->
+        </div>
+    </header>
+    <main>
+        <!-- card container -->
+        <section id="card-container" class="my-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <!-- <div class="card card-compact w-96 bg-base-100 shadow-xl">
+                <figure>
+                    <img src="./images/Rectangle.png" alt="Shoes" />
+                </figure>
+                <div class="card-body">
+                    <div class="flex gap-3">
+                        <div>
+                            <img src="./images/Ellipse1.png" alt="">
+                        </div>
+                        <div>
+                            <h1 class="text-lg font-bold">Building a Winning UX Strategy Using the Kano Model</h1>
+                            <p class="text-base flex gap-2">Awlad Hossain <span><img src="./images/Group.png" alt=""></span></p>
+                            <h3>91K views</h3>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            <!-- <button class="bg-red-600"></button> -->
+        </section>
+        <div id="hidden-container" class="flex flex-col w-full justify-center items-center hidden">
+            <img src="./images/Icon.png" alt="">
+            <h1 class="text-3xl font-bold">Oops!! Sorry, There is no content here</h1>
+        </div>
+    </main>
+    <footer>
+
+    </footer>
+
+    <script src="/js/script.js"></script>
+</body>
+
+</html>
