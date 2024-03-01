@@ -43,36 +43,18 @@ const fetchSpecificCategory = async (categoryId = 1000, id) => {
     const { data } = await res.json();
     console.log(data);
 
-    // Gpt
-    // const sortByViewButton = document.querySelector('#sort-by-view-button');
-    // sortByViewButton.addEventListener('click', sortByViews(data));
-
-    //createCard(data);
+    
+    createCard(data);
 
     const sortByViewButton = document.querySelector('#sort-by-view-button');
-    sortByViewButton.addEventListener('click', sortByViews(data));
-    createCard(data);
-}
-
-
-const sortByViews = (data) => {
-    //console.log('clicked');
-    
-    data.sort((a,b) =>{
-        const totalViewStringOne = a.others?.views;
-        const totalViewStringTwo = b.others?.views;
-
-        const totalViewNumberOne = parseFloat(totalViewStringOne.replace("k", '')) || 0 ;
-        const totalViewNumberTwo = parseFloat(totalViewStringTwo.replace("k", '')) || 0 ;
-
-        return totalViewNumberTwo - totalViewNumberOne ;
-    }) 
+    sortByViewButton.addEventListener("click", function(){createCard(data, true)});
 }
 
 
 
 
-const createCard = (data) => {
+
+const createCard = (data, sortByViews) => {
 
     //console.log(data.length);
   
@@ -81,8 +63,20 @@ const createCard = (data) => {
     cardContainer.innerHTML = '';
     //console.log(data);
 
-    // sort the data if sort by view button clicked
-
+    // sort the data if sort-by-view button clicked
+    //console.log(sortByViews)
+    if(sortByViews)
+    {
+        data.sort((a,b) =>{
+            const totalViewStringOne = a.others?.views;
+            const totalViewStringTwo = b.others?.views;
+    
+            const totalViewNumberOne = parseFloat(totalViewStringOne.replace("k", '')) || 0 ;
+            const totalViewNumberTwo = parseFloat(totalViewStringTwo.replace("k", '')) || 0 ;
+    
+            return totalViewNumberTwo - totalViewNumberOne ;
+        }) 
+    }
 
 
 
